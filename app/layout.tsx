@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: TITLE,
     description: DESCRIPTION,
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "BuildApp — Apps que venden más" }],
+    // images generadas automáticamente desde app/opengraph-image.tsx
   },
 
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/og.png"],
+    // images generadas desde app/twitter-image.tsx
     creator: "@buildapp_lat",
     site: "@buildapp_lat",
   },
@@ -128,9 +128,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen overflow-x-hidden">
         {/* Ambient gradient — siempre en movimiento */}
         <div className="fixed inset-0 pointer-events-none z-0 ambient-bg" aria-hidden />
-        {/* Aurora secundario */}
         <div className="fixed inset-0 pointer-events-none z-0 aurora-bg" aria-hidden />
-        {/* Noise overlay */}
         <div className="fixed inset-0 noise pointer-events-none z-[1]" aria-hidden />
         {children}
       </body>

@@ -14,7 +14,7 @@ export default function Hero() {
     <section id="top" className="relative pt-36 pb-24 md:pt-44 md:pb-32 overflow-hidden">
       <div className="absolute inset-x-0 -top-40 grid-bg grid-bg-fade h-[700px] pointer-events-none opacity-40" />
       <motion.div aria-hidden className="halo bg-accent/15 w-[500px] h-[500px] left-[-10%] top-10" />
-      <motion.div aria-hidden className="halo bg-electric/15 w-[450px] h-[450px] right-[-8%] top-32" style={{ animationDelay: "-4s" }} />
+      <motion.div aria-hidden className="halo bg-electric/15 w-[450px] h-[450px] right-[-8%] top-32" style={{ animationDelay: "-6s" }} />
 
       <motion.div variants={stagger} initial="hidden" animate="visible" className="relative max-w-7xl mx-auto px-6 text-center">
         <motion.div variants={fadeUp} className="inline-flex items-center gap-2 mb-8">
@@ -23,7 +23,7 @@ export default function Hero() {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
           </span>
           <span className="text-xs font-medium text-ink-dim tracking-wide">
-            Beta abierta · App oficial Tienda Nube · Hecho en LATAM
+            Beta abierta · App Partner de Tienda Nube · Tiendas en LATAM
           </span>
         </motion.div>
 
@@ -38,7 +38,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.div variants={fadeUp} className="mt-10 flex flex-col sm:flex-row gap-3 items-center justify-center">
-          <a href="#precios" className="btn-conic group relative inline-flex items-center gap-2 bg-bg-card hover:bg-bg-soft transition-all px-6 py-3.5 rounded-xl text-sm font-medium ring-glow">
+          <a href="/signup" className="btn-conic group relative inline-flex items-center gap-2 bg-bg-card hover:bg-bg-soft transition-all px-6 py-3.5 rounded-xl text-sm font-medium ring-glow">
             <IconSpark size={16} className="text-accent" />
             Probar 14 días gratis
             <IconArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -57,14 +57,11 @@ export default function Hero() {
 
         {/* Preview impactante — storefront real con app embebida */}
         <motion.div variants={fadeUp} className="mt-20 md:mt-24 relative max-w-6xl mx-auto">
-          {/* Glow trasero */}
           <div className="absolute -inset-x-16 -top-16 -bottom-16 mesh-bg blur-3xl opacity-60 pointer-events-none" />
-          {/* Halos animados detrás del mock */}
           <motion.div aria-hidden className="halo bg-accent/20 w-[300px] h-[300px] -left-20 top-1/2" style={{ animationDuration: "6s" }} />
           <motion.div aria-hidden className="halo bg-electric/20 w-[300px] h-[300px] -right-20 top-1/3" style={{ animationDuration: "7s", animationDelay: "-3s" }} />
 
           <div className="relative glass rounded-2xl overflow-hidden ring-glow">
-            {/* Browser chrome */}
             <div className="flex items-center justify-between px-5 py-3 border-b border-border-soft bg-bg-soft/40">
               <div className="flex items-center gap-2">
                 <div className="flex gap-1.5">
@@ -132,7 +129,6 @@ export default function Hero() {
 
               {/* RIGHT — Storefront real con popup embebido */}
               <div className="lg:col-span-3 relative bg-gradient-to-br from-bg-soft to-bg overflow-hidden">
-                {/* Header de la tienda mockeada */}
                 <div className="px-5 py-3 border-b border-border-soft/50 flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
                     <div className="w-7 h-7 rounded-full bg-gradient-to-br from-rose-400 to-amber-400" />
@@ -150,7 +146,6 @@ export default function Hero() {
                   </div>
                 </div>
 
-                {/* Hero banner placeholder */}
                 <div className="px-5 pt-5">
                   <div className="h-24 rounded-xl bg-gradient-to-br from-ink-dim/15 to-ink-dim/5 border border-border-soft/60 flex items-center justify-between px-5">
                     <div className="space-y-2">
@@ -161,7 +156,6 @@ export default function Hero() {
                   </div>
                 </div>
 
-                {/* Product grid */}
                 <div className="px-5 py-4">
                   <div className="flex items-center justify-between mb-3">
                     <div className="h-2.5 w-28 bg-ink-dim/25 rounded" />
@@ -184,7 +178,6 @@ export default function Hero() {
                   </div>
                 </div>
 
-                {/* POPUP — tu app, en vivo */}
                 <motion.div
                   initial={{ opacity: 0, y: 30, scale: 0.92 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -192,9 +185,7 @@ export default function Hero() {
                   className="absolute bottom-5 right-5 w-[280px]"
                 >
                   <div className="relative">
-                    {/* Glow */}
                     <div className="absolute -inset-2 bg-accent/30 blur-2xl rounded-2xl -z-10" />
-                    {/* Card */}
                     <div className="rounded-xl bg-gradient-to-br from-accent via-emerald-500 to-electric p-4 text-left shadow-glow ring-glow">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-[10px] uppercase tracking-wider text-white/85 font-mono font-bold">¡Llevátelo con 50% OFF!</span>
@@ -220,7 +211,6 @@ export default function Hero() {
                         <IconArrowUpRight size={11} />
                       </button>
                     </div>
-                    {/* Badge "BuildApp" */}
                     <div className="absolute -top-2 -left-2 inline-flex items-center gap-1 bg-bg-card border border-accent/40 rounded-full px-2 py-0.5 text-[9px] font-mono text-accent">
                       <IconSpark size={8} />
                       live
@@ -231,7 +221,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Caption debajo */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

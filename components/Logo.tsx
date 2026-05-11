@@ -8,12 +8,6 @@ type Variant = "full" | "icon" | "wordmark" | "domain";
  * BuildApp logo.
  * Dos bloques rounded apilados con offset diagonal (build + up)
  * con un pequeño "spark" interior en el bloque superior que evoca "app/instance live".
- *
- * Variantes:
- *  - full     icono + wordmark (default)
- *  - icon     solo el icono
- *  - wordmark solo el texto
- *  - domain   wordmark + .lat tag
  */
 
 export function Logo({
@@ -64,7 +58,7 @@ export function Logo({
       <rect x="15" y="3" width="14" height="14" rx="3.5" fill={`url(#${g2})`} />
       <rect x="15" y="3" width="14" height="2" rx="1" fill="white" opacity="0.22" />
 
-      {/* Spark interior — evoca "app encendida" */}
+      {/* Spark interior */}
       <circle cx="22" cy="10" r="3" fill={`url(#${g3})`} />
       <circle cx="22" cy="10" r="1.2" fill="white" opacity="0.95" />
     </svg>
@@ -74,7 +68,10 @@ export function Logo({
 
   if (variant === "wordmark") {
     return (
-      <span className={`font-bold tracking-tightest text-ink ${className}`} style={{ fontSize: size * 0.7 }}>
+      <span
+        className={`font-bold tracking-tightest text-ink ${className}`}
+        style={{ fontSize: size * 0.7 }}
+      >
         build<span className="text-gradient-emerald">app</span>
       </span>
     );

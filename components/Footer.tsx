@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div>
           <Logo size={22} className="mb-2" />
-          <p className="text-xs text-ink-dimmer">© 2026 BuildApp · App oficial Tienda Nube · Hecho en LATAM</p>
+          <p className="text-xs text-ink-dimmer">© 2026 BuildApp · App Partner de Tienda Nube · Tiendas en LATAM</p>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-ink-dimmer">
           <a href="#" className="hover:text-ink transition-colors">Términos</a>
