@@ -63,21 +63,12 @@ export const metadata: Metadata = {
     },
   },
 
-  icons: {
-    icon: [{
-      url: "data:image/svg+xml," + encodeURIComponent(
-        `<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><rect x='3' y='15' width='14' height='14' rx='3.5' fill='#10b981'/><rect x='15' y='3' width='14' height='14' rx='3.5' fill='#6366f1'/><circle cx='22' cy='10' r='2' fill='white'/></svg>`
-      ),
-      type: "image/svg+xml",
-    }],
-    apple: [{
-      url: "data:image/svg+xml," + encodeURIComponent(
-        `<svg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'><rect width='32' height='32' rx='6' fill='#050505'/><rect x='4' y='15' width='12' height='12' rx='3' fill='#10b981'/><rect x='15' y='4' width='12' height='12' rx='3' fill='#6366f1'/><circle cx='21' cy='10' r='1.8' fill='white'/></svg>`
-      ),
-    }],
-  },
+  // icons (favicon, apple-icon) y manifest se generan automáticamente desde:
+  //   app/icon.tsx        → /icon (favicon 32x32)
+  //   app/apple-icon.tsx  → /apple-icon (180x180)
+  //   app/icon-large/     → /icon-large (512x512 maskable)
+  //   app/manifest.ts     → /manifest.webmanifest
 
-  manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: SITE_NAME },
   other: { "msapplication-TileColor": "#050505", "color-scheme": "dark" },
 };

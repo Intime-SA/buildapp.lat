@@ -53,6 +53,18 @@ const partners: Partner[] = [
     alt: "MongoDB",
     h: 30,
   },
+  {
+    name: "AWS",
+    src: "/logos/aws.svg",
+    alt: "AWS",
+    h: 32,
+  },
+  {
+    name: "Cloudflare",
+    src: "/logos/cloudflare.svg",
+    alt: "Cloudflare",
+    h: 26,
+  },
 ];
 
 export default function Partners() {
