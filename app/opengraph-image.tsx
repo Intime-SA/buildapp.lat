@@ -15,8 +15,9 @@ export default async function Image() {
           background: "#050505",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
-          padding: "72px 80px",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "50px",
           position: "relative",
           fontFamily: '"Inter"',
         }}
@@ -27,48 +28,92 @@ export default async function Image() {
             inset: 0,
             display: "flex",
             background:
-              "radial-gradient(ellipse 60% 60% at 15% 25%, rgba(16,185,129,0.28) 0%, transparent 60%), radial-gradient(ellipse 50% 60% at 85% 75%, rgba(99,102,241,0.28) 0%, transparent 60%), radial-gradient(ellipse 40% 50% at 60% 110%, rgba(236,72,153,0.18) 0%, transparent 60%)",
+              "radial-gradient(ellipse 55% 55% at 50% 30%, rgba(16,185,129,0.32) 0%, transparent 60%), radial-gradient(ellipse 55% 55% at 50% 75%, rgba(99,102,241,0.32) 0%, transparent 60%), radial-gradient(ellipse 40% 50% at 15% 50%, rgba(236,72,153,0.14) 0%, transparent 60%)",
           }}
         />
 
-        <div style={{ display: "flex", alignItems: "center", gap: "20px", zIndex: 1 }}>
-          <svg width="64" height="64" viewBox="0 0 32 32">
-            <rect x="3" y="15" width="14" height="14" rx="3.5" fill="#10b981" />
-            <rect x="15" y="3" width="14" height="14" rx="3.5" fill="#6366f1" />
-            <circle cx="22" cy="10" r="2.5" fill="white" />
+        {/* Logo + wordmark verticalmente apilados — caben en el crop cuadrado de WhatsApp (630x630 centrado) */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            zIndex: 1,
+          }}
+        >
+          <svg width="200" height="200" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ba-og-g1" x1="3" y1="29" x2="17" y2="15" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#047857" />
+                <stop offset="1" stopColor="#34d399" />
+              </linearGradient>
+              <linearGradient id="ba-og-g2" x1="15" y1="17" x2="29" y2="3" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#4f46e5" />
+                <stop offset="1" stopColor="#a5b4fc" />
+              </linearGradient>
+              <radialGradient id="ba-og-g3" cx="0.5" cy="0.5" r="0.5">
+                <stop offset="0" stopColor="white" stopOpacity="0.95" />
+                <stop offset="1" stopColor="white" stopOpacity="0" />
+              </radialGradient>
+            </defs>
+            <rect x="3" y="15" width="14" height="14" rx="3.5" fill="url(#ba-og-g1)" />
+            <rect x="3" y="15" width="14" height="2" rx="1" fill="white" opacity="0.18" />
+            <rect x="15" y="3" width="14" height="14" rx="3.5" fill="url(#ba-og-g2)" />
+            <rect x="15" y="3" width="14" height="2" rx="1" fill="white" opacity="0.22" />
+            <circle cx="22" cy="10" r="3" fill="url(#ba-og-g3)" />
+            <circle cx="22" cy="10" r="1.2" fill="white" opacity="0.95" />
           </svg>
-          <div style={{ color: "white", fontSize: "44px", fontWeight: 800, letterSpacing: "-0.04em", display: "flex" }}>
-            <span>build</span>
-            <span style={{ color: "#34d399" }}>app</span>
-          </div>
-          <div style={{ color: "#34d399", fontSize: "20px", alignSelf: "flex-end", marginBottom: "8px", marginLeft: "-8px" }}>
-            .lat
-          </div>
-        </div>
 
-        <div style={{ display: "flex", flexDirection: "column", zIndex: 1 }}>
-          <div style={{ color: "white", fontSize: "82px", fontWeight: 800, letterSpacing: "-0.04em", lineHeight: 1.02, display: "flex", flexWrap: "wrap" }}>
-            <span>Apps que venden más</span>
-          </div>
-          <div style={{ color: "#a1a1aa", fontSize: "82px", fontWeight: 800, letterSpacing: "-0.04em", lineHeight: 1.05, display: "flex", marginTop: "4px" }}>
-            <span>en tu Tienda Nube.</span>
-          </div>
-          <div style={{ color: "#a1a1aa", fontSize: "26px", fontWeight: 400, marginTop: "28px", display: "flex" }}>
-            <span>Sin programar · Sin esperar a un dev · 14 días gratis</span>
-          </div>
-        </div>
-
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", zIndex: 1 }}>
-          <div style={{ display: "flex", gap: "12px" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", padding: "10px 18px", borderRadius: "999px", border: "1px solid rgba(16,185,129,0.3)", background: "rgba(16,185,129,0.08)", color: "#34d399", fontSize: "20px", fontWeight: 600 }}>
-              <span>● App Partner de Tienda Nube</span>
+          <div style={{ display: "flex", alignItems: "baseline", marginTop: "20px" }}>
+            <div
+              style={{
+                color: "white",
+                fontSize: "88px",
+                fontWeight: 800,
+                letterSpacing: "-0.05em",
+                display: "flex",
+                lineHeight: 1,
+              }}
+            >
+              <span>build</span>
+              <span style={{ color: "#34d399" }}>app</span>
             </div>
-            <div style={{ display: "flex", alignItems: "center", padding: "10px 18px", borderRadius: "999px", border: "1px solid rgba(99,102,241,0.3)", background: "rgba(99,102,241,0.08)", color: "#a5b4fc", fontSize: "20px", fontWeight: 600 }}>
-              <span>Tiendas en LATAM <span style={{ fontSize: "16px" }}>(Argentina, Chile, Colombia, México, Perú, etc.)</span></span>
+            <div
+              style={{
+                color: "#34d399",
+                fontSize: "28px",
+                fontWeight: 500,
+                marginLeft: "4px",
+                display: "flex",
+              }}
+            >
+              .lat
             </div>
           </div>
-          <div style={{ color: "#10b981", fontSize: "24px", fontWeight: 500, display: "flex" }}>
-            <span>buildapp.lat</span>
+
+          <div
+            style={{
+              color: "white",
+              fontSize: "32px",
+              fontWeight: 600,
+              letterSpacing: "-0.02em",
+              marginTop: "28px",
+              display: "flex",
+              textAlign: "center",
+            }}
+          >
+            Apps que venden más en tu Tienda Nube
+          </div>
+          <div
+            style={{
+              color: "#a1a1aa",
+              fontSize: "22px",
+              fontWeight: 400,
+              marginTop: "12px",
+              display: "flex",
+            }}
+          >
+            Sin programar · Sin esperar a un dev · 14 días gratis
           </div>
         </div>
       </div>
