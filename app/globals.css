@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-bg text-ink antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection { background: rgba(16, 185, 129, 0.25); color: white; }
+}
+
+@layer components {
+  .pill { @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium tracking-wide uppercase; }
+  .pill-green { background: rgba(16,185,129,.1); color: #34d399; border: 1px solid rgba(16,185,129,.2); }
+  .pill-indigo { background: rgba(99,102,241,.1); color: #818cf8; border: 1px solid rgba(99,102,241,.2); }
+  .pill-amber { background: rgba(245,158,11,.1); color: #fbbf24; border: 1px solid rgba(245,158,11,.2); }
+  .pill-red { background: rgba(239,68,68,.1); color: #f87171; border: 1px solid rgba(239,68,68,.2); }
+  .pill-zinc { background: rgba(161,161,170,.08); color: #a1a1aa; border: 1px solid rgba(161,161,170,.15); }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #fff 0%, #d4d4d8 40%, #10b981 70%, #6366f1 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .text-gradient-emerald {
+    background: linear-gradient(135deg, #34d399, #6366f1);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+  /* AMBIENT BACKGROUND — gradiente que respira en loop */
+  .ambient-bg {
+    background:
+      radial-gradient(50rem 30rem at 20% 10%, rgba(16,185,129,0.14) 0%, transparent 55%),
+      radial-gradient(40rem 28rem at 80% 20%, rgba(99,102,241,0.12) 0%, transparent 55%),
+      radial-gradient(45rem 30rem at 60% 90%, rgba(236,72,153,0.10) 0%, transparent 55%);
+    background-size: 200% 200%;
+    animation: ambient-drift 28s ease-in-out infinite alternate;
+    will-change: background-position;
+  }
+  @keyframes ambient-drift {
+    0%   { background-position: 0% 0%, 100% 0%, 50% 100%; }
+    50%  { background-position: 100% 50%, 0% 100%, 0% 50%; }
+    100% { background-position: 50% 100%, 50% 50%, 100% 0%; }
+  }
+
+  /* AURORA — capa adicional que gira lento, da movimiento continuo perceptible */
+  .aurora-bg {
+    background:
+      conic-gradient(from var(--aurora-angle, 0deg) at 50% 120%,
+        transparent 0deg,
+        rgba(16,185,129,0.08) 60deg,
+        transparent 120deg,
+        rgba(99,102,241,0.08) 200deg,
+        transparent 280deg,
+        rgba(236,72,153,0.06) 340deg,
+        transparent 360deg
+      );
+    filter: blur(60px);
+    animation: aurora-spin 40s linear infinite;
+    will-change: --aurora-angle;
+  }
+  @property --aurora-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+  @keyframes aurora-spin {
+    to { --aurora-angle: 360deg; }
+  }
+
+  .mesh-bg {
+    background:
+      radial-gradient(at 20% 10%, rgba(16,185,129,.12) 0, transparent 50%),
+      radial-gradient(at 80% 30%, rgba(99,102,241,.12) 0, transparent 50%),
+      radial-gradient(at 60% 90%, rgba(236,72,153,.08) 0, transparent 50%);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .grid-bg-fade {
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+
+  .noise {
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
+    background-size: 180px 180px;
+    opacity: .035;
+  }
+
+  .glass {
+    background: rgba(15,15,16,.6);
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,.06);
+  }
+
+  .ring-glow {
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,.04),
+      0 20px 80px -20px rgba(16,185,129,.25),
+      inset 0 1px 0 rgba(255,255,255,.04);
+  }
+
+  /* Conic border animado */
+  .btn-conic { position: relative; isolation: isolate; }
+  .btn-conic::before {
+    content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1px;
+    background: conic-gradient(from var(--angle, 0deg), #10b981, #6366f1, #ec4899, #10b981);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    animation: spinAngle 6s linear infinite; z-index: -1;
+  }
+  @property --angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+  @keyframes spinAngle { to { --angle: 360deg; } }
+
+  /* Glow halo animado (para decoraciones) */
+  .halo {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+    animation: halo-pulse 8s ease-in-out infinite;
+  }
+  @keyframes halo-pulse {
+    0%, 100% { transform: scale(1) translate(0,0); opacity: 0.35; }
+    50%      { transform: scale(1.15) translate(20px,-10px); opacity: 0.5; }
+  }
+
+  /* Shimmer en textos */
+  .shimmer-text {
+    background: linear-gradient(110deg, #a1a1aa 0%, #ffffff 50%, #a1a1aa 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .ambient-bg, .aurora-bg { animation: none !important; }
+  }
+}

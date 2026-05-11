@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" fill="none">
+  <g transform="translate(8, 12)">
+    <path d="M20 0 L24 16 L40 20 L24 24 L20 40 L16 24 L0 20 L16 16 Z" fill="#D97757"/>
+  </g>
+  <text x="64" y="46" font-family="'Times New Roman', 'Source Serif Pro', serif" font-style="italic" font-weight="500" font-size="38" fill="#FFFFFF" letter-spacing="-0.5">Claude</text>
+</svg>

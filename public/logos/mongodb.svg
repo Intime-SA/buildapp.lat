@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" fill="none">
+  <g transform="translate(14, 6)">
+    <path d="M20 0 C20 0 8 12 8 28 C8 40 14 48 20 52 C26 48 32 40 32 28 C32 12 20 0 20 0 Z" fill="#00ED64"/>
+    <path d="M20 52 L20 56" stroke="#00ED64" stroke-width="2"/>
+  </g>
+  <text x="64" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="32" fill="#FFFFFF" letter-spacing="-0.8">MongoDB</text>
+</svg>

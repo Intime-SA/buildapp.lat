@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" fill="none">
+  <rect x="6" y="12" width="60" height="40" rx="10" fill="#00B1EA"/>
+  <path d="M18 38 Q28 28 36 34 Q44 40 54 30" stroke="#FFFFFF" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <text x="78" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="26" fill="#FFFFFF" letter-spacing="-0.6">Mercado Pago</text>
+</svg>

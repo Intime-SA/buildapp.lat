@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" fill="none">
+  <g transform="translate(12, 12)">
+    <circle cx="20" cy="20" r="18" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+    <path d="M20 6 V34 M6 20 H34 M10 10 L30 30 M10 30 L30 10" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  <text x="64" y="46" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="36" fill="#FFFFFF" letter-spacing="-0.8">OpenAI</text>
+</svg>
